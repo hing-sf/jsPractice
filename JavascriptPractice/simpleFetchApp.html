@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fetch Random Images API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+        }
+
+        body #authors {
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        #authors {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #authors .item {
+            margin: 10px;
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        #authors .item img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fetch Random Images API</h1>
+    <figure id="authors">
+
+    </figure>
+
+</body>
+<script>
+    function createNode(element) {
+        return document.createElement(element);
+    }
+
+    function append(parent, el) {
+        return parent.appendChild(el)
+    }
+
+    const figure = document.getElementById('authors');
+
+    // API call
+    const url = 'https://randomuser.me/api/?results=20';
+    const data = {
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        }
+    };
+    fetch(url, data)
+        .then((resp) => {
+
+            if (resp.status > 400 && resp.status < 499) {
+                throw Error(`Request rejected with status ${resp.status}`);
+            } else if (resp.status >= 500) {
+                throw Error(`Server error status ${resp.status}`);
+            } else {
+                return resp.json()
+            }
+        })
+        .then(function (data) {
+            let authors = data.results;
+
+            return authors.map(function (author) {
+                let div = createNode('div'),
+                    img = createNode('img'),
+                    figcaption = createNode('figcaption');
+
+                div.classList.add('item');
+                img.src = author.picture.large;
+                figcaption.innerHTML = `${author.name.first} ${author.name.last}`;
+
+                append(div, img);
+                append(div, figcaption);
+                append(figure, div);
+            })
+        })
+        .catch(console.error);
+
+</script>
+
+</html>
