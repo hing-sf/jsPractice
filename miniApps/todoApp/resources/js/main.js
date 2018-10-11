@@ -54,6 +54,7 @@ function dataObjectUpdated() {
 }
 
 function removeItem() {
+  console.log(this)
   var item = this.parentNode.parentNode;
   console.log(item);
   var parent = item.parentNode;
