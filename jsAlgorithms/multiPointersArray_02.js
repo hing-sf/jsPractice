@@ -1,7 +1,15 @@
+// ======================================================
+// ARRAY MUST BE SORTED TO WORK
+// Multiple pointers Pattern
+// count Unique Value
+// Example 2
+// ======================================================
+
 let arr = [1, 2, 2, 3, 5, 5, 5, 5, 6, 8, 8, 8, 9];
 
 function checkUniqueValue(arr) {
     if( arr.length === 0 ){ return 0}
+
 	// set Pointer 1 index
 	var i = 0;
 

@@ -1,6 +1,32 @@
-// // Array must be sorted to work
+// ======================================================
+// Array must be sorted to work
+// Solution Time Comlexity - 0(N^2)
+// ======================================================
 
-// // Solution Time Comlexity - 0(N )
+// function sumZero( arr ) {
+
+//     // loop ove Array
+//     for( let i = 0; i < arr.length; i++){
+
+//         // loop over the next index to the end of the Array
+//         for ( let j = i+1; j < arr.length; j++ ){
+//             // if index of arr1 + arr2 = 0
+//             if (arr[i] + arr[j] === 0){
+//                 // return value of arr1 and arr2
+//                 return [arr[i], arr[j]]
+//             }
+//         }
+//     }
+// }
+
+// ======================================================
+// ARRAY MUST BE SORTED TO WORK
+// Multiple pointers Patternc
+// find first match positive number
+// Solution Time Comlexity - 0(N )
+// Example 1
+// ======================================================
+
 var arr = [-4, -3, -2, -1, 0, 1, 2, 5]
 console.log(sumZero(arr))
 
@@ -27,21 +53,3 @@ function sumZero( arr ) {
         }
     }
 }
-
-
-// // Solution Time Comlexity - 0(N^2)
-// function sumZero( arr ) {
-
-//     // loop ove Array
-//     for( let i = 0; i < arr.length; i++){
-
-//         // loop over the next index to the end of the Array
-//         for ( let j = i+1; j < arr.length; j++ ){
-//             // if index of arr1 + arr2 = 0
-//             if (arr[i] + arr[j] === 0){
-//                 // return value of arr1 and arr2
-//                 return [arr[i], arr[j]]
-//             }
-//         }
-//     }
-// }
