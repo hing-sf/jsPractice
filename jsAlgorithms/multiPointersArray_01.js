@@ -21,14 +21,14 @@
 
 // ======================================================
 // ARRAY MUST BE SORTED TO WORK
-// Multiple pointers Patternc
+// Multiple pointers Pattern
 // find first match positive number
 // Solution Time Comlexity - 0(N )
 // Example 1
 // ======================================================
 
 var arr = [-4, -3, -2, -1, 0, 1, 2, 5]
-console.log(sumZero(arr))
+sumZero(arr)
 
 // Multiple pointers Pattern
 function sumZero( arr ) {

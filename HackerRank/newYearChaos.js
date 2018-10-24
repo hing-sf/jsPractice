@@ -32,7 +32,7 @@ function minimumBribes(q) {
     function bubbleSort(){
         let swap ='';
         for(let i = 0; i < qLen; i ++){
-            for(let j = )
+            // for(let j = )
         }
     }
 
