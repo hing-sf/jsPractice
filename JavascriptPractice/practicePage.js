@@ -1,32 +1,11 @@
-let animals = {
-    'boxer': 'dog',
-    'fluffy': 'cat',
-    'husky': 'dog',
-    'poodle': 'dog',
-    'fluffy2': 'cat',
-    'fluffy3': 'cat'
-}
-
-// sort animals using reduce method
-function sortAnimals(animals) {
-    return Object.keys(animals).reduce((prev, key) => {
-        if (animals[key] === 'dog') {
-            prev.dog.push(key)
-        }
-        if (animals[key] === 'cat') {
-            prev.cat.push(key)
-        }
-        return prev;
-    }, { 'dog': [], 'cat': []});
-}
-
-console.log(sortAnimals(animals))
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
 
+// spread
+var str = [1,2,3,4,5];
+var chars = [...str,...str];
+console.log(chars)
 
-// duplicate array
-let arr1 = [1, 2];
-let arr2 = [1, 2];
-let dupArray = arr1.concat(arr2)
+// rest
 
-console.log(dupArray);
+console.log(str[0], ...str)
