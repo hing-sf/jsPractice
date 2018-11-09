@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Thumbnail Gallery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                margin: 20px;
+                padding: 0;
+                background: #333;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: auto;
+                border: #fff solid 3px;
+                background: #fff;
+            }
+
+            .main-img .imgs img,
+            .imgs img {
+                width: 100%;
+            }
+
+            .imgs {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+                grid-gap: 5px;
+            }
+
+            /* Fade in animation */
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .fade-in {
+                opacity: 0;
+                animation: fadeIn 0.5s ease-in 1 forwards;
+            }
+        </style>
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="main-img">
+                <img src="https://via.placeholder.com/800x600/ababab/808080?image1" alt="" id="current">
+            </div>
+
+            <div class="imgs">
+                <img src="https://via.placeholder.com/800x600/0000FF/808080?image1" alt="">
+                <img src="https://via.placeholder.com/800x600/c72424/808080?image2" alt="">
+                <img src="https://via.placeholder.com/800x600/24b5c7/808080?image3" alt="">
+                <img src="https://via.placeholder.com/800x600/2444c7/808080?image4" alt="">
+                <img src="https://via.placeholder.com/800x600/c724c6/808080?image5" alt="">
+                <img src="https://via.placeholder.com/800x600/b14d66/808080?image6" alt="">
+                <img src="https://via.placeholder.com/800x600/d48a10/808080?image7" alt="">
+                <img src="https://via.placeholder.com/800x600/09845e/808080?image8" alt="">
+            </div>
+        </div>
+
+        <script>
+            const current = document.querySelector('#current');
+            const imgs = document.querySelectorAll('.imgs img');
+            const selected = 0.5;
+
+            imgs.forEach(img => img.addEventListener('click', clickedImg));
+
+            function clickedImg(e) {
+                // reset all Images to 1 opacity
+                imgs.forEach(img => (img.style.opacity = 1));
+
+                // set clicked Image src to main image src
+                current.src = e.target.src;
+                // add fade in animation class to main image
+                current.classList.add('fade-in');
+                // add opacity to selected image
+                e.target.style.opacity = selected;
+
+                // remove fade-in class to main image
+                setTimeout(() => {
+                    current.classList.remove('fade-in');
+                }, 500)
+            }
+        </script>
+    </body>
+</html>
