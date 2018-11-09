@@ -71,6 +71,11 @@
             const imgs = document.querySelectorAll('.imgs img');
             const selected = 0.5;
 
+            // set first image onload
+            current.src = imgs[0].src;
+            imgs[0].style.opacity = selected;
+
+            // add Listener to images array
             imgs.forEach(img => img.addEventListener('click', clickedImg));
 
             function clickedImg(e) {
