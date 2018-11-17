@@ -26,7 +26,7 @@ function reverse(str) {
   for(let letter of splitString){
   	newString.unshift( letter )
   }
-  var joinString = newString.join('').toString();
+  var joinString = newString.join('')
 
   console.log(joinString)
 }
