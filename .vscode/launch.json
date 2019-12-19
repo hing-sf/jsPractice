@@ -1,38 +1,15 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "practicePage",
-            "program": "${workspaceFolder}/practicePage.js"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "multiPointersArray_02",
-            "program": "${workspaceFolder}/jsAlgorithms/multiPointersArray_02.js"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "multiPointersArray_01",
-            "program": "${workspaceFolder}/jsAlgorithms/multiPointersArray_01.js"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "anagramTest.js",
-            "program": "${workspaceFolder}/jsAlgorithms/anaTest.js"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "frequency.js",
-            "program": "${workspaceFolder}/jsAlgorithms/frequency.js"
-        }
-    ]
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+
+
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Program",
+			"program": "/Users/hing/myProjects/jsPractice/JavascriptPractice/practicePage.js"
+		}
+	]
 }
