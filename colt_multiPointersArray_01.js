@@ -27,29 +27,30 @@
 // Example 1
 // ======================================================
 
-var arr = [-4, -3, -2, -1, 0, 1, 2, 5]
-sumZero(arr)
+var arr = [-4, -3, -2, -1, 0, 1, 2, 5];
+
+sumZero(arr);
 
 // Multiple pointers Pattern
-function sumZero( arr ) {
-    // create left and right Array pointers
-    let left = 0;
-    let right = arr.length - 1;
-    // loop over array
-    while ( left < right ){
-        let sum = arr[left] + arr[right];
-        // if left + right = 0
-        if ( sum === 0 ){
-            // return array value
-            return [arr[left], arr[right]];
-        }
-        // if sum is greater than 0, move right pointer down to next index to the left so value decrease
-        else if ( sum > 0 ){
-            right--;
-        }
-        // if sum is less than 0, move left pointer up to the next index so value increase
-        else {
-            left++;
-        }
-    }
+function sumZero(arr) {
+	// create left and right Array pointers
+	let left = 0;
+	let right = arr.length - 1;
+	// loop over array
+	while (left < right) {
+		let sum = arr[left] + arr[right];
+		// if left + right = 0
+		if (sum === 0) {
+			// return array value
+			return [arr[left], arr[right]];
+		}
+		// if sum is greater than 0, move right pointer down to next index to the left so value decrease
+		else if (sum > 0) {
+			right--;
+		}
+		// if sum is less than 0, move left pointer up to the next index so value increase
+		else {
+			left++;
+		}
+	}
 }
