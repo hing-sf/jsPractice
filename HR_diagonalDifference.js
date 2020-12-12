@@ -16,15 +16,20 @@ function diagonalDifference(arr) {
 		rightPosition--;
 	}
 
-    // create helper addSum function to add total
+	// create helper addSum function to add total
 	function addSum(outputArr) {
 		return outputArr.reduce((prev, item) => {
 			return prev + item;
 		}, 0);
-    }
+	}
 
-    return Math.abs(addSum(diaTopLeftToRight) - addSum(diaTopRightToLeft))
+	return Math.abs(addSum(diaTopLeftToRight) - addSum(diaTopRightToLeft));
 }
 
-var arr = [[11, 2, 4], [4, 5, 6], [10, 8, -12]];
-console.log(diagonalDifference(arr))
+var arr = [
+	[11, 2, 4],
+	[4, 5, 6],
+	[10, 8, -12]
+];
+console.log(diagonalDifference(arr));
+console.log('');
